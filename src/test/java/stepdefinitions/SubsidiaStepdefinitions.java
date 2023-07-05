@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -121,4 +122,42 @@ public static String secondWindow;
         softAssert.assertTrue(secondWindowTitle.contains("online"));
         softAssert.assertAll();
     }
+
+
+    @When("the user clicks on the offene stellen button")
+    public void the_user_clicks_on_the_offene_stellen_button() {
+    subsidiaPage.offeneStellenButton.click();
+    ReusableMethods.bekle(2);
+    }
+    @When("then the user clicks on the stellenprofil lesen button")
+    public void then_the_user_clicks_on_the_stellenprofil_lesen_button() {
+    subsidiaPage.stellenProfilLesenButton.click();
+    }
+    @Then("the user should confirm the visibility of the text Supporter")
+    public void the_user_should_confirm_the_visibility_of_the_text_supporter_m_w_d() {
+    softAssert.assertTrue(subsidiaPage.supporterTextElement.isDisplayed());
+    }
+    @Then("the user clicks on the email address link diego@subsidia.ch")
+    public void the_user_clicks_on_the_email_address_link_diego_subsidia_ch() {
+        actions.moveToElement(subsidiaPage.diegoMailAddressLink).perform();
+        subsidiaPage.diegoMailAddressLink.click();
+        ReusableMethods.bekle(5);
+    }
+    @Then("the user should confirm that the mail box is opened")
+    public void the_user_should_confirm_that_the_mail_box_is_opened() {
+        Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+        windowHandles.remove(firstWindowWH);
+
+        for (String windowHandle : windowHandles) {
+            Driver.getDriver().switchTo().window(windowHandle);
+        }
+
+        boolean isMailboxOpened = Driver.getDriver().getTitle().contains("Outlook");
+        if (isMailboxOpened) {
+            System.out.println("Mailbox is opened.");
+        } else {
+            System.out.println("Mailbox is not opened.");
+        }
+    }
+
 }

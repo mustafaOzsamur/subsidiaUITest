@@ -1,5 +1,5 @@
 Feature: US003 Page Redirect Test
-@wip
+
   Scenario: TC003 When the user clicks on the "Wann war das" link, they should be directed to the correct page
 
     Given Navigate to the "subsidiaUrl" website.

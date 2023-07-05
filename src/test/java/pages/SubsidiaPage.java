@@ -26,6 +26,18 @@ public WebElement facebookIconButton;
 @FindBy(xpath = "//a[text()='Wann war das?']")
     public WebElement wannWarDasLinkElement;
 
+@FindBy(xpath = "//a[@class='button w-button']")
+    public WebElement offeneStellenButton;
+
+@FindBy(xpath = "//a[@class='button margin-left w-button']")
+    public WebElement stellenProfilLesenButton;
+
+@FindBy(xpath = "//h1[@class='centre-align']")
+    public WebElement supporterTextElement;
+
+@FindBy(xpath = "//a[text()='diego@subsidia.ch']")
+    public WebElement diegoMailAddressLink;
+
 
 
 
