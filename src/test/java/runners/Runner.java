@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@amz",
+        tags = "@wip",
 
         dryRun = false
 )
@@ -33,7 +33,7 @@ public class Runner {
 
         @CucumberOptions ise framework'umuzde gerekli ayarlari yapar
 
-        features : feature dosyalarimizin bulundugu konumu gosterir
+        feature : feature dosyalarimizin bulundugu konumu gosterir
                    dikkat edilirse tek tek feature dosyalarini degil
                    tum feature dosyalarini iceren klasorun yolunu yaziyoruz
         glue : feature dosyalari ile bagli olan
