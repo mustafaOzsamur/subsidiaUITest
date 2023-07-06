@@ -1,5 +1,5 @@
 Feature: US004 text validation and mailbox testing
-@wip
+  @smoke
   Scenario: TC004 User should verify that text appears and mailbox opens
     Given Navigate to the "subsidiaUrl" website.
     When  click on the Team button.

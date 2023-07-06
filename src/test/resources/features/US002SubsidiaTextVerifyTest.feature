@@ -1,6 +1,6 @@
 Feature: US001 text validation test.
 
-
+@smoke
   Scenario: TC002 User confirms that "Textile Leidenschaft trifft technisches Know-how" appears
 
     Given Navigate to the "subsidiaUrl" website.

@@ -18,10 +18,12 @@ import utilities.ReusableMethods;
 import java.util.Set;
 
 
-public class SubsidiaStepdefinitions {
+ public class SubsidiaStepdefinitions {
 
-public static String firstWindowWH;
-public static String secondWindow;
+ public static String firstWindowWH;
+ public static String secondWindow;
+ public static   String actualTitle;
+ public static   String expectedTitle;
 
 
     SubsidiaPage subsidiaPage=new SubsidiaPage();
@@ -158,6 +160,34 @@ public static String secondWindow;
         } else {
             System.out.println("Mailbox is not opened.");
         }
+    }
+
+
+    @Then("clicks the product button.")
+    public void clicks_the_product_button() {
+        subsidiaPage.produktButtonElement.click();
+    }
+    @Then("clicks the startsaite link.")
+    public void clicks_the_startsaite_link() {
+        actions.moveToElement(subsidiaPage.startSeiteButtonElement).click().perform();
+    }
+    @Then("confirms that he is redirected to the home page.")
+    public void confirms_that_he_is_redirected_to_the_home_page() {
+    actualTitle=Driver.getDriver().getTitle();
+    expectedTitle="https://subsidia.ch/";
+
+    softAssert.assertEquals(actualTitle,expectedTitle);
+    }
+    @Then("clicks the product anschauen link.")
+    public void clicks_the_product_anschauen_link() {
+    actions.moveToElement(subsidiaPage.produkteAnschauenButtonElement).click().perform();
+    }
+    @Then("confirms that he has been redirected to the relevant page.")
+    public void confirms_that_he_has_been_redirected_to_the_relevant_page() {
+    actualTitle=Driver.getDriver().getTitle();
+    expectedTitle="https://subsidia.ch/produkt";
+
+    softAssert.assertEquals(actualTitle,expectedTitle);
     }
 
 }

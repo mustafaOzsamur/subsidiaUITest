@@ -1,6 +1,6 @@
 Feature: US001 Subsidia facebook icon Test
 
-
+@smoke
   Scenario: TC001 The user verifies that the Facebook icon redirects to the correct page.
 
     Given Navigate to the "subsidiaUrl" website.

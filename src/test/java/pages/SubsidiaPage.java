@@ -38,6 +38,15 @@ public WebElement facebookIconButton;
 @FindBy(xpath = "//a[text()='diego@subsidia.ch']")
     public WebElement diegoMailAddressLink;
 
+@FindBy(xpath = "(//a[text()='Produkt'])[1]")
+    public WebElement produktButtonElement;
+
+@FindBy(xpath = "//a[text()='Startseite']")
+    public WebElement startSeiteButtonElement;
+
+@FindBy(xpath = "//a[text()='Produkte anschauen']")
+    public WebElement produkteAnschauenButtonElement;
+
 
 
 
